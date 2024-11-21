@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}商品詳細{% endblock %}
+{% block content %}
+<h1>商品詳細</h1>
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>商品名</th>
+            <th>価格</th>
+            <!-- 課題「商品データに商品説明の項目を追加しよう」で追加 -->
+            <th>カテゴリ</th>
+            <th>商品画像</th>
+            <th>商品詳細の説明</th>
+            <!-- ここまで -->
+        </tr>
+    </thead>
+    <tr>
+        <td>{{ object.name }}</td>
+        <td>{{ object.price }} 円</td>
+        <!-- # 課題「商品データに商品説明の項目を追加しよう」で追加 -->
+        <td>{{ object.category }}</td>
+        <td><img src="{{ object.img.url }}" style="width:100px height:auto;"></td>
+        <td>{{ object.description }}</td>
+        <!-- ここまで -->
+    </tr>
+</table>
+
+<a href="{% url 'list' %}">戻る</a>
+{% endblock %}
